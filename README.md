@@ -36,6 +36,12 @@ Remove an instance
 
 To run `redzilla-k8s` you need a suitable kubernetes cluster and RBAC permissions to create/list/delete nodes (documentation and examples to come).
 
+## TODO
+
+- Fix up debugging and log output
+- Document environment parameters and usage
+- Add volume mount options
+
 ## License
 
 The MIT license. See `LICENSE` file for details
