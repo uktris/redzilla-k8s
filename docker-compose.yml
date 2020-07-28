@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  redzilla-k8s:
+    image: inspirex/redzilla-k8s
+    environment:
+      DOCKER_API_VERSION: 1.39
+      REDZILLA_NETWORK: redzilla_redzilla
+      REDZILLA_IMAGENAME: docker.io/nodered/node-red-docker:latest
+    networks:
+      - redzilla
+    ports:
+      - 3000:3000
+
+networks:
+  redzilla:
+    driver: bridge
