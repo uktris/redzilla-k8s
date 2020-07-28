@@ -93,7 +93,17 @@ export const create = async (name: string): Promise<Container> => {
           containers: [{
             name: name,
             image: process.env.REDZILLA_IMAGENAME || 'docker.io/nodered/node-red-docker:latest',
-            ports: [ { containerPort: 1880 }]
+            ports: [ { containerPort: 1880 }],
+            volume_mount: {
+              mount_path: process.env.VOLUME_MOUNT_PATH,
+              name: process.env.VOLUME_MOUNT_NAME
+            },
+            volume: {
+              persistent_volume_claim: {
+                claim_name: process.env.VOLUME_CLAIM_NAME
+              },
+              name: process.env.VOLUME_MOUNT_NAME
+            }
           }]
         }
       }

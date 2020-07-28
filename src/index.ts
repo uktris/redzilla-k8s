@@ -31,6 +31,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use("/instances", containersRouter);
+app.use("/v2/instances", containersRouter);
 
 /**
  * Server Activation
